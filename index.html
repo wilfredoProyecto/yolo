@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta 10</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header con opciones de usuario -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo de Tienda de Belleza" class="logo-img">
+        </div>
+
+        <div class="user-options">
+            <!-- Carrito -->
+            <button id="cart-button" onclick="openCartModal()">
+                <i class="fa-solid fa-cart-shopping" style="color: rgb(0, 0, 0); transform: scale(1.2);"></i>
+                <span id="cart-count">0</span>
+            </button>
+
+            <!-- Contáctenos -->
+            <button id="contact-button" onclick="openContactForm()">
+                <i class="fa-solid fa-envelope"></i>
+            </button>
+
+            <!-- Iniciar sesión -->
+            <button id="login-button" onclick="openLoginModal()">
+                <i class="fa-solid fa-user"></i>
+            </button>
+            <!-- Ubicación -->
+            <button id="location-button" onclick="openLocationModal()">
+                <i class="fa-solid fa-location-pin"></i>
+    </button>   
+        </div>
+    </header>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide active">
+                <img src="img/slider.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="image2.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="image3.jpg" alt="Slide 3">
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#8249;</button>
+        <button class="next" onclick="moveSlide(1)">&#8250;</button>
+    </div>
+
+    <!-- Sección de productos -->
+    <section id="product-section">
+        <input type="text" id="search-bar" placeholder="Buscar productos..." onkeyup="searchProducts()">
+        
+        <div id="product-list" class="products-container"></div>
+
+        
+        <!-- Sección Maquillaje -->
+        
+    
+        <div id="makeup-products" class="product-list"></div>
+
+        <!-- Sección Cuidado del Cabello -->
+
+        <div id="haircare-products" class="product-list"></div>
+
+        <!-- Sección Cuidado de la Piel -->
+        
+        <div id="skincare-products" class="product-list"></div>
+    </section>
+    <section id="about-us" class="about-us-section">
+        <div class="about-us-wrapper">
+            <div class="about-us-text">
+                <h1>Acerca de Meta 10</h1>
+                <p>
+                    En <strong>Radiante</strong>, entendemos que ser estudiante universitario es un viaje lleno de retos y oportunidades. Por eso, hemos creado un espacio pensado especialmente para ti, donde encontrarás todo lo necesario para sobresalir en tu día a día académico y personal.
+                </p>
+                <p>
+                    Desde materiales de escritura confiables hasta innovadores gadgets tecnológicos, nuestro catálogo está diseñado para ofrecerte herramientas que inspiran creatividad, organización y éxito. Sabemos que cada producto que elijas debe ser más que útil: debe ser una extensión de tu estilo y tu pasión por aprender.
+                </p>
+                <p>
+                    Más que una tienda, somos tu aliado en cada examen, proyecto y sueño que construyes. Porque en Radiante, creemos que el éxito empieza con las herramientas adecuadas y un servicio que te entiende.
+                </p>
+            </div>
+            <div class="about-us-highlights">
+                <h2>¿Por qué elegirnos?</h2>
+                <div class="highlight">
+                    <i class="fa-solid fa-star" style="color: #f39c12;"></i>
+                    <h3>Calidad Garantizada</h3>
+                    <p>Trabajamos con marcas líderes para ofrecer productos duraderos y confiables que acompañen tu ritmo de vida.</p>
+                </div>
+                <div class="highlight">
+                    <i class="fa-solid fa-dollar-sign" style="color: #27ae60;"></i>
+                    <h3>Precios Estudiantiles</h3>
+                    <p>Sabemos que cada centavo cuenta, por eso ofrecemos precios competitivos y promociones diseñadas para ti.</p>
+                </div>
+                <div class="highlight">
+                    <i class="fa-solid fa-lightbulb" style="color: #e74c3c;"></i>
+                    <h3>Innovación Constante</h3>
+                    <p>Actualizamos constantemente nuestro catálogo con las últimas tendencias en tecnología, papelería y accesorios.</p>
+                </div>
+            </div>
+            <div class="about-us-image">
+                <img src="img/1.jpg" alt="Estudiantes colaborando con productos Radiante">
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <!-- Footer con mejoras visuales y Font Awesome para iconos -->
+    <footer>
+        <div class="footer-container">
+            <!-- Sección de información básica -->
+            <div class="footer-info">
+                <p>&copy; 2024 Radiante. Todos los derechos reservados.</p>
+                <p>Contáctanos: <a href="tel:+955889092">955 889 092</a> | <a href="mailto:yolo32ts@gmail.com">yolo32ts@gmail.com</a></p>
+            </div>
+    
+            <!-- Sección de enlaces importantes -->
+            <div class="footer-links">
+                <div>
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Productos</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Sección de redes sociales -->
+                <div>
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Sección de ubicación -->
+                <div>
+                    <h3>Dirección</h3>
+                    <p> Av. Paz Soldán 120, La Joya 0440, Arequipa, Perú</p>
+                    <a href="#" class="btn-map">Ver en el mapa</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+
+<!-- Agregar Font Awesome para los iconos -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    
+    
+
+    <!-- Modal de Carrito -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCartModal()">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items"></div>
+            <button onclick="openPaymentModal()">Pagar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Pago -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePaymentModal()">&times;</span>
+            <h2>Pago con Tarjeta de Crédito</h2>
+            <div class="card-logos">
+                <img src="img/visa.png" alt="Visa" class="card-logo">
+                <img src="img/discover.png" alt="MasterCard" class="card-logo">
+                <img src="img/mastercard.jpg" alt="American Express" class="card-logo">
+                <img src="img/amex.png" alt="Discover" class="card-logo">
+            </div>
+
+            <form id="payment-form">
+                <label for="card-number">Número de tarjeta:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="Número de tarjeta" required><br>
+
+                <label for="expiry-date">Fecha de vencimiento:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required><br>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" required><br>
+
+                <button type="submit">Confirmar pago</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Iniciar sesión -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Iniciar sesión</h2>
+            <form id="login-form">
+                <input type="text" placeholder="Correo" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Contacto -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactForm()">&times;</span>
+            <h2>Contáctanos</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo" required>
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
